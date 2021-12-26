@@ -41,8 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="CHINHANH.cs" />
+    <Compile Include="CT_DONHANG.cs" />
+    <Compile Include="CT_THONGBAO.cs" />
+    <Compile Include="DOITAC.cs" />
+    <Compile Include="DONHANG.cs" />
+    <Compile Include="HOPDONG.cs" />
+    <Compile Include="KHACHHANG.cs" />
+    <Compile Include="LOGIN.cs" />
+    <Compile Include="NHANVIEN.cs" />
+    <Compile Include="PHIHOAHONG.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SANPHAM.cs" />
+    <Compile Include="SANPHAM_DOITAC.cs" />
+    <Compile Include="TAIXE.cs" />
+    <Compile Include="THONGBAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj">

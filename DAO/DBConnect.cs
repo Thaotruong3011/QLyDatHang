@@ -40,7 +40,7 @@ namespace DAO
         //        _connection.Close();
         //        _connection = null;
         //    }
-        public IDbConnection CreateConnection()
+        public IDbConnection CreateConnection(string username, string pass)
         {
             //SqlConnection conn1 = new SqlConnection();
             //conn1.ConnectionString = @"Data Source=THAOTRUONG\SQL;" +
@@ -54,8 +54,10 @@ namespace DAO
             //CommandType.Text,
             //sqlQuery,
             //sqlParams);
-            string strConString = CnnVal("QUANLYTRUNGTAMTINHOC");
-            var conn1 = new SqlConnection(@"Data Source=THAOTRUONG\SQL;Initial Catalog=QLDCHO;User ID=Test; Password=123456;");
+            //string strConString = CnnVal("QUANLYTRUNGTAMTINHOC");
+
+            ///var conn1 = new SqlConnection(@"Data Source=THAOTRUONG\SQL;Initial Catalog=QLDCHO;Integrated Security=True");
+            var conn1 = new SqlConnection(@"Data Source=THAOTRUONG\SQL;Initial Catalog=QLDCHO;User ID=" + username + " ; Password=" + pass + " ;");
             try
             {
                 conn1.Open();

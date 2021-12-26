@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MH_CapQuyenQTV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MH_CapQuyenQTV.Designer.cs">
+      <DependentUpon>MH_CapQuyenQTV.cs</DependentUpon>
+    </Compile>
     <Compile Include="MH_DangKiKH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,12 @@
     </Compile>
     <Compile Include="MH_DangNhap.Designer.cs">
       <DependentUpon>MH_DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MH_QLySanPhamQTV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MH_QLySanPhamQTV.Designer.cs">
+      <DependentUpon>MH_QLySanPhamQTV.cs</DependentUpon>
     </Compile>
     <Compile Include="MH_QtriND.cs">
       <SubType>Form</SubType>
@@ -93,11 +105,17 @@
     <Compile Include="MH_XemDSSP.Designer.cs">
       <DependentUpon>MH_XemDSSP.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="MH_CapQuyenQTV.resx">
+      <DependentUpon>MH_CapQuyenQTV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MH_DangKiKH.resx">
       <DependentUpon>MH_DangKiKH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MH_DangNhap.resx">
       <DependentUpon>MH_DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MH_QLySanPhamQTV.resx">
+      <DependentUpon>MH_QLySanPhamQTV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MH_QtriND.resx">
       <DependentUpon>MH_QtriND.cs</DependentUpon>

@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class DTO_CHINHANH
-    {
+    public class DTO_CHINHANH
+    {   public DTO_CHINHANH(int macn1,string tencn1,string diachi1)
+        {
+            macn = macn1;
+            tencn = tencn1;
+            diachi = diachi1;
+        }
+        public DTO_CHINHANH()
+        {
+            macn = 1;
+            tencn = " ";
+            diachi = " ";
+        }
+        public int macn;
+        public string tencn;
+        public string diachi;
     }
 }

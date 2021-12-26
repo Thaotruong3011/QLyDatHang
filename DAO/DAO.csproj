@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{7E9F1AFD-1599-43D7-83E0-1FAEA0C6253E}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>DAO</RootNamespace>
     <AssemblyName>DAO</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.2.0.123\lib\net461\Dapper.dll</HintPath>
@@ -50,14 +53,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataProvider.cs" />
     <Compile Include="DBConnect.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="DB_CHINHANH.cs" />
+    <Compile Include="DB_CT_DONHANG.cs" />
+    <Compile Include="DB_CT_THONGBAO.cs" />
+    <Compile Include="DB_DOITAC.cs" />
+    <Compile Include="DB_DONHANG.cs" />
+    <Compile Include="DB_HOPDONG.cs" />
+    <Compile Include="DB_KHACHHANG.cs" />
+    <Compile Include="DB_LOGIN.cs" />
+    <Compile Include="DB_NHANVIEN.cs" />
+    <Compile Include="DB_PHIHOAHONG.cs" />
+    <Compile Include="DB_SANPHAM.cs" />
+    <Compile Include="DB_SANPHAM_DOITAC.cs" />
+    <Compile Include="DB_TAIXE.cs" />
+    <Compile Include="DB_THONGBAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

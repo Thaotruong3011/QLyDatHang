@@ -37,20 +37,20 @@ namespace QLyDatHang
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lst_DoiTac = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.lst_SanPham = new System.Windows.Forms.DataGridView();
             this.button7 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lst_DoiTac)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lst_SanPham)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -145,13 +145,13 @@ namespace QLyDatHang
             this.label3.TabIndex = 13;
             this.label3.Text = "Đối tác";
             // 
-            // dataGridView1
+            // lst_DoiTac
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-1, 260);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(311, 159);
-            this.dataGridView1.TabIndex = 14;
+            this.lst_DoiTac.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.lst_DoiTac.Location = new System.Drawing.Point(-1, 260);
+            this.lst_DoiTac.Name = "lst_DoiTac";
+            this.lst_DoiTac.Size = new System.Drawing.Size(311, 159);
+            this.lst_DoiTac.TabIndex = 14;
             // 
             // button4
             // 
@@ -205,13 +205,13 @@ namespace QLyDatHang
             this.label4.TabIndex = 18;
             this.label4.Text = "Sản phẩm";
             // 
-            // dataGridView2
+            // lst_SanPham
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(347, 126);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(284, 231);
-            this.dataGridView2.TabIndex = 19;
+            this.lst_SanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.lst_SanPham.Location = new System.Drawing.Point(347, 126);
+            this.lst_SanPham.Name = "lst_SanPham";
+            this.lst_SanPham.Size = new System.Drawing.Size(284, 231);
+            this.lst_SanPham.TabIndex = 19;
             // 
             // button7
             // 
@@ -295,12 +295,12 @@ namespace QLyDatHang
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.lst_SanPham);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.lst_DoiTac);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
@@ -311,8 +311,9 @@ namespace QLyDatHang
             this.Controls.Add(this.label1);
             this.Name = "MH_XemDSSP";
             this.Text = "Xem Sản Phẩm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.Load += new System.EventHandler(this.MH_XemDSSP_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.lst_DoiTac)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lst_SanPham)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -330,12 +331,12 @@ namespace QLyDatHang
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView lst_DoiTac;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView lst_SanPham;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
