@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DTO
 {
     public class DTO_NHANVIEN
-    {  public DTO_NHANVIEN(string manv1,string hoten1,string cmnd1,string sdt1,string diachi1,string email1,string tknh1, string loainv1)
+    {  public DTO_NHANVIEN(string manv1,string hoten1,string cmnd1,string sdt1,string diachi1,string email1,string tknh1, string loainv1,string pass1)
         {
             manv = manv1;
             hoten = hoten1;
@@ -17,6 +17,7 @@ namespace DTO
             email = email1;
             tknh = tknh1;
             loainv = loainv1;
+            pass = pass1;
         }
         public DTO_NHANVIEN()
         {
@@ -28,9 +29,10 @@ namespace DTO
             email = " ";
             tknh = " ";
             loainv = " ";
+            pass = " ";
         }
         public string manv;
-        //public string pass;
+        public string pass;
         public string hoten;
         public string cmnd;
         public string sdt;

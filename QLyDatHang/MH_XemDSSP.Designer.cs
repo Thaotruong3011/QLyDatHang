@@ -32,15 +32,15 @@ namespace QLyDatHang
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.search_button = new System.Windows.Forms.Button();
+            this.searchDT = new System.Windows.Forms.Button();
+            this.searchProduct = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lst_DoiTac = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.sx_gia = new System.Windows.Forms.Button();
+            this.sx_all = new System.Windows.Forms.Button();
+            this.sx_khuvuc = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.lst_SanPham = new System.Windows.Forms.DataGridView();
             this.button7 = new System.Windows.Forms.Button();
@@ -49,6 +49,8 @@ namespace QLyDatHang
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.add_product = new System.Windows.Forms.Button();
+            this.XemSPTheoDT = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.lst_DoiTac)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lst_SanPham)).BeginInit();
             this.panel1.SuspendLayout();
@@ -86,54 +88,57 @@ namespace QLyDatHang
             this.label2.TabIndex = 8;
             this.label2.Text = "Bạn muốn tìm gì?";
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(21, 172);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(171, 20);
-            this.textBox1.TabIndex = 9;
+            this.txtSearch.Location = new System.Drawing.Point(21, 172);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(171, 20);
+            this.txtSearch.TabIndex = 9;
             // 
-            // button2
+            // search_button
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(186)))), ((int)(((byte)(0)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.Window;
-            this.button2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button2.Location = new System.Drawing.Point(198, 172);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Tìm kiếm";
-            this.button2.UseVisualStyleBackColor = false;
+            this.search_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(186)))), ((int)(((byte)(0)))));
+            this.search_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.search_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search_button.ForeColor = System.Drawing.SystemColors.Window;
+            this.search_button.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.search_button.Location = new System.Drawing.Point(198, 172);
+            this.search_button.Name = "search_button";
+            this.search_button.Size = new System.Drawing.Size(75, 23);
+            this.search_button.TabIndex = 10;
+            this.search_button.Text = "Tìm kiếm";
+            this.search_button.UseVisualStyleBackColor = false;
+            this.search_button.Click += new System.EventHandler(this.search_button_Click);
             // 
-            // button1
+            // searchDT
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(186)))), ((int)(((byte)(0)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button1.Location = new System.Drawing.Point(164, 212);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Đối tác";
-            this.button1.UseVisualStyleBackColor = false;
+            this.searchDT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(186)))), ((int)(((byte)(0)))));
+            this.searchDT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchDT.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.searchDT.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.searchDT.Location = new System.Drawing.Point(176, 212);
+            this.searchDT.Name = "searchDT";
+            this.searchDT.Size = new System.Drawing.Size(75, 23);
+            this.searchDT.TabIndex = 11;
+            this.searchDT.Text = "Đối tác";
+            this.searchDT.UseVisualStyleBackColor = false;
+            this.searchDT.Click += new System.EventHandler(this.searchDT_Click);
             // 
-            // button3
+            // searchProduct
             // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.button3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button3.Location = new System.Drawing.Point(235, 212);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Sản phẩm";
-            this.button3.UseVisualStyleBackColor = false;
+            this.searchProduct.BackColor = System.Drawing.Color.White;
+            this.searchProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchProduct.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.searchProduct.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.searchProduct.Location = new System.Drawing.Point(247, 212);
+            this.searchProduct.Name = "searchProduct";
+            this.searchProduct.Size = new System.Drawing.Size(75, 23);
+            this.searchProduct.TabIndex = 12;
+            this.searchProduct.Text = "Sản phẩm";
+            this.searchProduct.UseVisualStyleBackColor = false;
+            this.searchProduct.Click += new System.EventHandler(this.searchProduct_Click);
             // 
             // label3
             // 
@@ -150,56 +155,56 @@ namespace QLyDatHang
             this.lst_DoiTac.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.lst_DoiTac.Location = new System.Drawing.Point(-1, 260);
             this.lst_DoiTac.Name = "lst_DoiTac";
-            this.lst_DoiTac.Size = new System.Drawing.Size(311, 159);
+            this.lst_DoiTac.Size = new System.Drawing.Size(345, 159);
             this.lst_DoiTac.TabIndex = 14;
             // 
-            // button4
+            // sx_gia
             // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.button4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button4.Location = new System.Drawing.Point(484, 73);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "Giá";
-            this.button4.UseVisualStyleBackColor = false;
+            this.sx_gia.BackColor = System.Drawing.Color.White;
+            this.sx_gia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sx_gia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sx_gia.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.sx_gia.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.sx_gia.Location = new System.Drawing.Point(484, 73);
+            this.sx_gia.Name = "sx_gia";
+            this.sx_gia.Size = new System.Drawing.Size(75, 23);
+            this.sx_gia.TabIndex = 16;
+            this.sx_gia.Text = "Giá";
+            this.sx_gia.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // sx_all
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(186)))), ((int)(((byte)(0)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.button5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button5.Location = new System.Drawing.Point(412, 73);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 15;
-            this.button5.Text = "Tất cả";
-            this.button5.UseVisualStyleBackColor = false;
+            this.sx_all.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(186)))), ((int)(((byte)(0)))));
+            this.sx_all.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sx_all.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sx_all.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.sx_all.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.sx_all.Location = new System.Drawing.Point(412, 73);
+            this.sx_all.Name = "sx_all";
+            this.sx_all.Size = new System.Drawing.Size(75, 23);
+            this.sx_all.TabIndex = 15;
+            this.sx_all.Text = "Tất cả";
+            this.sx_all.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // sx_khuvuc
             // 
-            this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.button6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button6.Location = new System.Drawing.Point(556, 73);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 17;
-            this.button6.Text = "Khu vực";
-            this.button6.UseVisualStyleBackColor = false;
+            this.sx_khuvuc.BackColor = System.Drawing.Color.White;
+            this.sx_khuvuc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sx_khuvuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sx_khuvuc.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.sx_khuvuc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.sx_khuvuc.Location = new System.Drawing.Point(556, 73);
+            this.sx_khuvuc.Name = "sx_khuvuc";
+            this.sx_khuvuc.Size = new System.Drawing.Size(75, 23);
+            this.sx_khuvuc.TabIndex = 17;
+            this.sx_khuvuc.Text = "Khu vực";
+            this.sx_khuvuc.UseVisualStyleBackColor = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(363, 110);
+            this.label4.Location = new System.Drawing.Point(344, 109);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 13);
             this.label4.TabIndex = 18;
@@ -210,7 +215,7 @@ namespace QLyDatHang
             this.lst_SanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.lst_SanPham.Location = new System.Drawing.Point(347, 126);
             this.lst_SanPham.Name = "lst_SanPham";
-            this.lst_SanPham.Size = new System.Drawing.Size(284, 231);
+            this.lst_SanPham.Size = new System.Drawing.Size(412, 133);
             this.lst_SanPham.TabIndex = 19;
             // 
             // button7
@@ -219,9 +224,9 @@ namespace QLyDatHang
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.button7.ForeColor = System.Drawing.SystemColors.Window;
             this.button7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button7.Location = new System.Drawing.Point(366, 373);
+            this.button7.Location = new System.Drawing.Point(529, 382);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(104, 37);
+            this.button7.Size = new System.Drawing.Size(130, 37);
             this.button7.TabIndex = 20;
             this.button7.Text = "Thanh toán";
             this.button7.UseVisualStyleBackColor = false;
@@ -230,11 +235,11 @@ namespace QLyDatHang
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(505, 397);
+            this.label5.Location = new System.Drawing.Point(665, 406);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 13);
             this.label5.TabIndex = 21;
-            this.label5.Text = "3 sản phẩm";
+            this.label5.Text = "0 sản phẩm";
             // 
             // panel1
             // 
@@ -244,7 +249,7 @@ namespace QLyDatHang
             this.panel1.Controls.Add(this.label6);
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(629, 67);
+            this.panel1.Size = new System.Drawing.Size(785, 67);
             this.panel1.TabIndex = 22;
             // 
             // button9
@@ -253,7 +258,7 @@ namespace QLyDatHang
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.ForeColor = System.Drawing.Color.Transparent;
             this.button9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button9.Location = new System.Drawing.Point(545, 19);
+            this.button9.Location = new System.Drawing.Point(677, 19);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(81, 29);
             this.button9.TabIndex = 20;
@@ -266,7 +271,7 @@ namespace QLyDatHang
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.ForeColor = System.Drawing.Color.Transparent;
             this.button8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button8.Location = new System.Drawing.Point(365, 19);
+            this.button8.Location = new System.Drawing.Point(533, 19);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(126, 29);
             this.button8.TabIndex = 19;
@@ -286,26 +291,55 @@ namespace QLyDatHang
             this.label6.TabIndex = 7;
             this.label6.Text = "ShipForU";
             // 
+            // add_product
+            // 
+            this.add_product.BackColor = System.Drawing.Color.Teal;
+            this.add_product.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.add_product.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.add_product.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.add_product.Location = new System.Drawing.Point(529, 325);
+            this.add_product.Name = "add_product";
+            this.add_product.Size = new System.Drawing.Size(130, 37);
+            this.add_product.TabIndex = 23;
+            this.add_product.Text = "Thêm vào giỏ hàng";
+            this.add_product.UseVisualStyleBackColor = false;
+            // 
+            // XemSPTheoDT
+            // 
+            this.XemSPTheoDT.BackColor = System.Drawing.Color.Teal;
+            this.XemSPTheoDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.XemSPTheoDT.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.XemSPTheoDT.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.XemSPTheoDT.Location = new System.Drawing.Point(357, 382);
+            this.XemSPTheoDT.Name = "XemSPTheoDT";
+            this.XemSPTheoDT.Size = new System.Drawing.Size(130, 37);
+            this.XemSPTheoDT.TabIndex = 24;
+            this.XemSPTheoDT.Text = "Xem sản phẩm";
+            this.XemSPTheoDT.UseVisualStyleBackColor = false;
+            this.XemSPTheoDT.Click += new System.EventHandler(this.XemSPTheoDT_Click);
+            // 
             // MH_XemDSSP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(634, 461);
+            this.ClientSize = new System.Drawing.Size(784, 450);
+            this.Controls.Add(this.XemSPTheoDT);
+            this.Controls.Add(this.add_product);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.lst_SanPham);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.sx_khuvuc);
+            this.Controls.Add(this.sx_gia);
+            this.Controls.Add(this.sx_all);
             this.Controls.Add(this.lst_DoiTac);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.searchProduct);
+            this.Controls.Add(this.searchDT);
+            this.Controls.Add(this.search_button);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label1);
@@ -326,15 +360,15 @@ namespace QLyDatHang
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button search_button;
+        private System.Windows.Forms.Button searchDT;
+        private System.Windows.Forms.Button searchProduct;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView lst_DoiTac;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button sx_gia;
+        private System.Windows.Forms.Button sx_all;
+        private System.Windows.Forms.Button sx_khuvuc;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView lst_SanPham;
         private System.Windows.Forms.Button button7;
@@ -343,5 +377,7 @@ namespace QLyDatHang
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button add_product;
+        private System.Windows.Forms.Button XemSPTheoDT;
     }
 }

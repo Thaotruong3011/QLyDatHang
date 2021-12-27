@@ -67,6 +67,12 @@
     <Compile Include="MH_DangNhap.Designer.cs">
       <DependentUpon>MH_DangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="MH_QLyDoiTac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MH_QLyDoiTac.Designer.cs">
+      <DependentUpon>MH_QLyDoiTac.cs</DependentUpon>
+    </Compile>
     <Compile Include="MH_QLySanPhamQTV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MH_DangNhap.resx">
       <DependentUpon>MH_DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MH_QLyDoiTac.resx">
+      <DependentUpon>MH_QLyDoiTac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MH_QLySanPhamQTV.resx">
       <DependentUpon>MH_QLySanPhamQTV.cs</DependentUpon>

@@ -35,13 +35,19 @@ namespace QLyDatHang
                 xemdssp.Show();
                 this.Hide();
             }
-            //else if (t.rows[0][0].tostring().indexof("nv") != -1)
-            //{
-            //    //mh_xemdssp xemdssp = new mh_xemdssp();
-            //    ////txbusername.text.tostring()
-            //    //xemdssp.show();
-            //    //this.hide();
-            //}
+            else if (txbUserName.Text.ToString().IndexOf("NV") != -1)
+            {
+                if(t.Rows[0][8].ToString()== "Quản trị viên")
+                {
+                    MH_QLySanPhamQTV MHQLYSP = new MH_QLySanPhamQTV(txbUserName.Text.ToString(), txbPassword.Text.ToString());
+                    MHQLYSP.Show();
+                    this.Hide();
+                }
+                //mh_xemdssp xemdssp = new mh_xemdssp();
+                ////txbusername.text.tostring()
+                //xemdssp.show();
+                //this.hide();
+            }
             //else if (t.rows[0][0].tostring().indexof("DT") != -1)
             //{
             //    //mh_xemdssp xemdssp = new mh_xemdssp();

@@ -72,23 +72,23 @@ namespace DAO
             //return new SqlConnection(strConString);
             return conn1;
         }
-        //    public IDbConnection CreateConnection(string name)
-        //    {
-        //        string strConString = CnnVal(name);
-        //        var conn = new SqlConnection(strConString);
-        //        try
-        //        {
-        //            conn.Open();
-        //            conn.Close();
-        //        }
-        //        catch (SqlException ex)
-        //        {
-        //            MessageBox.Show(ex.Message, "Timed Out");
-        //            return new SqlConnection();
-        //        }
+       public SqlConnection creatsqlconnection(string username, string pass)
+        {
+            var conn1 = new SqlConnection(@"Data Source=THAOTRUONG\SQL;Initial Catalog=QLDCHO;User ID=" + username + " ; Password=" + pass + " ;");
+            try
+            {
+                conn1.Open();
+               // conn1.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Timed Out");
+                return new SqlConnection();
+            }
 
-        //        return new SqlConnection(strConString);
-        //    }
+            //return new SqlConnection(strConString);
+            return conn1;
+        }
 
     }
 }
