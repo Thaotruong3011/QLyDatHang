@@ -32,5 +32,8 @@ namespace DTO
         public int sldh { get; set; }
         public int slton { get; set; }
         public float gia { get; set; }
+        //note: them tensp cho tien thoi, dung xoa
+        public string tensp { get; set; }
+        public int soluong { get; set; }
     }
 }

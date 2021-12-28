@@ -43,8 +43,8 @@ namespace QLyDatHang
             this.sx_khuvuc = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.lst_SanPham = new System.Windows.Forms.DataGridView();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.thanhtoan = new System.Windows.Forms.Button();
+            this.sosp = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -218,28 +218,29 @@ namespace QLyDatHang
             this.lst_SanPham.Size = new System.Drawing.Size(412, 133);
             this.lst_SanPham.TabIndex = 19;
             // 
-            // button7
+            // thanhtoan
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(162)))), ((int)(((byte)(168)))));
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.button7.ForeColor = System.Drawing.SystemColors.Window;
-            this.button7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button7.Location = new System.Drawing.Point(529, 382);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(130, 37);
-            this.button7.TabIndex = 20;
-            this.button7.Text = "Thanh toán";
-            this.button7.UseVisualStyleBackColor = false;
+            this.thanhtoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(162)))), ((int)(((byte)(168)))));
+            this.thanhtoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.thanhtoan.ForeColor = System.Drawing.SystemColors.Window;
+            this.thanhtoan.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.thanhtoan.Location = new System.Drawing.Point(529, 382);
+            this.thanhtoan.Name = "thanhtoan";
+            this.thanhtoan.Size = new System.Drawing.Size(130, 37);
+            this.thanhtoan.TabIndex = 20;
+            this.thanhtoan.Text = "Thanh toán";
+            this.thanhtoan.UseVisualStyleBackColor = false;
+            this.thanhtoan.Click += new System.EventHandler(this.thanhtoan_Click);
             // 
-            // label5
+            // sosp
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(665, 406);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 13);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "0 sản phẩm";
+            this.sosp.AutoSize = true;
+            this.sosp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sosp.Location = new System.Drawing.Point(665, 406);
+            this.sosp.Name = "sosp";
+            this.sosp.Size = new System.Drawing.Size(72, 13);
+            this.sosp.TabIndex = 21;
+            this.sosp.Text = "0 sản phẩm";
             // 
             // panel1
             // 
@@ -303,6 +304,7 @@ namespace QLyDatHang
             this.add_product.TabIndex = 23;
             this.add_product.Text = "Thêm vào giỏ hàng";
             this.add_product.UseVisualStyleBackColor = false;
+            this.add_product.Click += new System.EventHandler(this.add_product_Click);
             // 
             // XemSPTheoDT
             // 
@@ -327,8 +329,8 @@ namespace QLyDatHang
             this.Controls.Add(this.XemSPTheoDT);
             this.Controls.Add(this.add_product);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.sosp);
+            this.Controls.Add(this.thanhtoan);
             this.Controls.Add(this.lst_SanPham);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.sx_khuvuc);
@@ -371,8 +373,8 @@ namespace QLyDatHang
         private System.Windows.Forms.Button sx_khuvuc;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView lst_SanPham;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button thanhtoan;
+        private System.Windows.Forms.Label sosp;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button9;

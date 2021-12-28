@@ -71,6 +71,7 @@ namespace QLyDatHang
 
             BUS.DOITAC.ThemDT_QTV(qtv.manv, qtv.pass, madt, pass, socn, tenDT, nguoiDDien, thanhpho, diachikd, sdthoai, emaill);
             MessageBox.Show("Thêm đối tác mới thành công");
+            
             DS_DT = BUS.DOITAC.getdsDoiTac_QTV(qtv.manv, qtv.pass);
             list.DataSource = DS_DT;
         }

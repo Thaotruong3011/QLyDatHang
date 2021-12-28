@@ -13,10 +13,12 @@ namespace QLyDatHang
 {
     public partial class MH_XemDSSP : Form
     {
-        //List<DTO_SANPHAM_DOITAC> listSP_DT;
+        List<DTO_SANPHAM_DOITAC> listSP_DTChon= new List<DTO_SANPHAM_DOITAC>();
         //List<DTO_DOITAC> list_DT;
         DataTable DSSP_DT = new DataTable();
         DataTable DS_DT = new DataTable();
+        DTO_SANPHAM_DOITAC sp_them=new DTO_SANPHAM_DOITAC();
+        int sospchon = 0;
         public MH_XemDSSP()
         {
             InitializeComponent();
@@ -34,13 +36,13 @@ namespace QLyDatHang
         {
            
             //listSP_DT = BUS.SANPHAM_DOITAC.getdsSPDoiTac(kh.email, kh.pass);
-           // DSSP_DT = BUS.SANPHAM_DOITAC.TimKiemSPTheoTen("tdhuy@gmailcom", "123456", " ");
-            DSSP_DT = BUS.SANPHAM_DOITAC.TimKiemSPTheoTen(kh.email, kh.pass, " ");
+           DSSP_DT = BUS.SANPHAM_DOITAC.TimKiemSPTheoTen("tdhuy@gmailcom", "123456", " ");
+            //DSSP_DT = BUS.SANPHAM_DOITAC.TimKiemSPTheoTen(kh.email, kh.pass, " ");
             lst_SanPham.DataSource = DSSP_DT;
 
             // list_DT=BUS.DOITAC.getdsDoiTac(kh.email, kh.pass);
-            //DS_DT = BUS.DOITAC.getdsDoiTac("tdhuy@gmailcom", "123456");
-            DS_DT = BUS.DOITAC.getdsDoiTac(kh.email, kh.pass);
+            DS_DT = BUS.DOITAC.getdsDoiTac("tdhuy@gmailcom", "123456");
+            //DS_DT = BUS.DOITAC.getdsDoiTac(kh.email, kh.pass);
             lst_DoiTac.DataSource= DS_DT;
             MessageBox.Show(kh.email + "  " + kh.pass);
            // MessageBox.Show(listSP_DT.Count()+ " ");
@@ -70,14 +72,15 @@ namespace QLyDatHang
                     MessageBox.Show(" " + 0);
                     //Tim theo ten san pham
                     DataTable dt = new DataTable();
-                    //DSSP_DT = BUS.SANPHAM_DOITAC.TimKiemSPTheoTen("tdhuy@gmailcom", "123456", textSearch);
-                    DSSP_DT = BUS.SANPHAM_DOITAC.TimKiemSPTheoTen(kh.email,kh.pass, textSearch);
+                    DSSP_DT = BUS.SANPHAM_DOITAC.TimKiemSPTheoTen("tdhuy@gmailcom", "123456", textSearch);
+                   // DSSP_DT = BUS.SANPHAM_DOITAC.TimKiemSPTheoTen(kh.email,kh.pass, textSearch);
                     lst_SanPham.DataSource = DSSP_DT;
                     
                 }
                 else if(searchDT.BackColor == System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(186)))), ((int)(((byte)(0))))))
                 {
-                    DS_DT = BUS.DOITAC.TimKiemDTTheoMa(kh.email, kh.pass, textSearch);
+                    DS_DT = BUS.DOITAC.TimKiemDTTheoMa("tdhuy@gmailcom", "123456", textSearch);
+                    //DS_DT = BUS.DOITAC.TimKiemDTTheoMa(kh.email, kh.pass, textSearch);
                     lst_DoiTac.DataSource = DS_DT;
                 }
             }
@@ -90,11 +93,58 @@ namespace QLyDatHang
             if (indexChon != -1)
             {
                 string maDT = DS_DT.Rows[indexChon][0].ToString();
-               // DSSP_DT = BUS.SANPHAM_DOITAC.TimKiemSPTheoDT("tdhuy@gmailcom", "123456",maDT);
-                DSSP_DT = BUS.SANPHAM_DOITAC.TimKiemSPTheoDT(kh.email,kh.pass, maDT);
+                DSSP_DT = BUS.SANPHAM_DOITAC.TimKiemSPTheoDT("tdhuy@gmailcom", "123456",maDT);
+                //DSSP_DT = BUS.SANPHAM_DOITAC.TimKiemSPTheoDT(kh.email,kh.pass, maDT);
                 lst_SanPham.DataSource = DSSP_DT;
             }
 
+        }
+       
+        private void add_product_Click(object sender, EventArgs e)
+        {
+            int indexChon = lst_SanPham.CurrentCell.RowIndex;
+
+            if (indexChon != -1)
+            {
+                DTO_SANPHAM_DOITAC sp_them = new DTO_SANPHAM_DOITAC();
+                sp_them.madt = DSSP_DT.Rows[indexChon][1].ToString();
+                sp_them.masp = Int32.Parse(DSSP_DT.Rows[indexChon][0].ToString());
+
+                int flag = 0;
+                for (int i = 0; i < listSP_DTChon.Count; i++)
+                {
+                    MessageBox.Show(listSP_DTChon[i].madt + "  " + listSP_DTChon[i].masp);
+                    if (listSP_DTChon[i].madt == sp_them.madt)
+                    {
+                        if (listSP_DTChon[i].masp == sp_them.masp)
+                        {
+                            listSP_DTChon[i].soluong++;
+                            flag = 1;
+                            sospchon++;
+                            sosp.Text = sospchon + " sản phẩm";
+                        }
+                    }
+                }
+                if (flag == 0)
+                {
+                    sp_them.mota = DSSP_DT.Rows[indexChon][2].ToString();
+                    sp_them.sldh = Int32.Parse( DSSP_DT.Rows[indexChon][3].ToString());
+                    sp_them.gia = float.Parse(DSSP_DT.Rows[indexChon][4].ToString());
+                    sp_them.slton = Int32.Parse(DSSP_DT.Rows[indexChon][5].ToString());
+                    sp_them.tensp = DSSP_DT.Rows[indexChon][6].ToString();
+                    sp_them.soluong = 1;
+                    listSP_DTChon.Add(sp_them);
+                    sospchon++;
+                    sosp.Text = sospchon + " sản phẩm";
+                }
+            }
+           
+        }
+
+        private void thanhtoan_Click(object sender, EventArgs e)
+        {
+            MH_ThanhToan mhtt = new MH_ThanhToan(kh.email, kh.pass, listSP_DTChon);
+            mhtt.Show();
         }
     }
 }

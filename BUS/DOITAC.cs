@@ -26,8 +26,5 @@ namespace BUS
         {
              DB_DOITAC.ThemDT_QTV(username, password, ma,pass,socn,tendt, nguoidd, thanhpho,diachikd,sdt,email);
         }
-
-
-
     }
 }
