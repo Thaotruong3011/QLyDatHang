@@ -30,7 +30,7 @@ namespace QLyDatHang
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
+            this.exit = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -71,7 +71,7 @@ namespace QLyDatHang
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(162)))), ((int)(((byte)(168)))));
-            this.panel1.Controls.Add(this.button9);
+            this.panel1.Controls.Add(this.exit);
             this.panel1.Controls.Add(this.button8);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Location = new System.Drawing.Point(2, 1);
@@ -79,18 +79,19 @@ namespace QLyDatHang
             this.panel1.Size = new System.Drawing.Size(798, 67);
             this.panel1.TabIndex = 23;
             // 
-            // button9
+            // exit
             // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(162)))), ((int)(((byte)(168)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.ForeColor = System.Drawing.Color.Transparent;
-            this.button9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button9.Location = new System.Drawing.Point(545, 19);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(81, 29);
-            this.button9.TabIndex = 20;
-            this.button9.Text = "Đăng xuất";
-            this.button9.UseVisualStyleBackColor = false;
+            this.exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(162)))), ((int)(((byte)(168)))));
+            this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exit.ForeColor = System.Drawing.Color.Transparent;
+            this.exit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.exit.Location = new System.Drawing.Point(545, 19);
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(81, 29);
+            this.exit.TabIndex = 20;
+            this.exit.Text = "Đăng xuất";
+            this.exit.UseVisualStyleBackColor = false;
+            this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // button8
             // 
@@ -104,6 +105,7 @@ namespace QLyDatHang
             this.button8.TabIndex = 19;
             this.button8.Text = "Quản lý sản phẩm";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // label6
             // 
@@ -488,7 +490,7 @@ namespace QLyDatHang
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button exit;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button2;

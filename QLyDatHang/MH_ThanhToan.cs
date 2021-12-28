@@ -27,8 +27,6 @@ namespace QLyDatHang
             InitializeComponent();
             kh.email = username;
             kh.pass = password;
-            kh.email = "tdhuy@gmailcom";
-            kh.pass = "123456";
             lstSP_DTChon = lstsp;
         }
 
@@ -76,6 +74,13 @@ namespace QLyDatHang
             MH_XemDSDH xemdsdh = new MH_XemDSDH(kh.email,kh.pass);
             xemdsdh.Show();
             this.Close();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            MH_DangNhap mhDN = new MH_DangNhap();
+            mhDN.Show();
+            this.Hide();
         }
     }
 }

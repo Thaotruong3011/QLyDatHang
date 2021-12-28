@@ -75,5 +75,19 @@ namespace QLyDatHang
             DS_DT = BUS.DOITAC.getdsDoiTac_QTV(qtv.manv, qtv.pass);
             list.DataSource = DS_DT;
         }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            MH_DangNhap mhDN = new MH_DangNhap();
+            mhDN.Show();
+            this.Hide();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            MH_QLySanPhamQTV mhDN = new MH_QLySanPhamQTV();
+            mhDN.Show();
+            this.Hide();
+        }
     }
 }

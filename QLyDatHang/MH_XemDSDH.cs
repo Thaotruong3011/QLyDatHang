@@ -14,6 +14,7 @@ namespace QLyDatHang
     {
         DTO_KHACHHANG kh = new DTO_KHACHHANG();
         DataTable LstDH = new DataTable();
+        DataTable LstCTDH = new DataTable();
         public MH_XemDSDH()
         {
             InitializeComponent();
@@ -22,12 +23,29 @@ namespace QLyDatHang
         {
             InitializeComponent();
             kh.email = username;
-                kh.pass = password;
+             kh.pass = password;
         }
 
         private void MH_XemDSDH_Load(object sender, EventArgs e)
         {
-            
+             LstDH= BUS.DONHANG.XemDSDH_KH(kh.email, kh.pass);
+            lstDonHang.DataSource = LstDH;
+            LstCTDH = BUS.CT_DONHANG.XemDSCTDH_KH(kh.email, kh.pass);
+            lstCTDH.DataSource = LstCTDH;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            MH_XemDSSP xemDSSP = new MH_XemDSSP(kh.email, kh.pass);
+            xemDSSP.Show();
+            this.Hide();
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            MH_DangNhap mhDN = new MH_DangNhap();
+            mhDN.Show();
+            this.Hide();
         }
     }
 }

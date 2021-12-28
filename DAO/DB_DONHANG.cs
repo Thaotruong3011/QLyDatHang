@@ -42,7 +42,8 @@ namespace DAO
                     //_dbConnection.Open();
                     for (int i = 0; i < lstSP_DTChon.Count; i++)
                     {
-                        string sqlCTDH = "exec sp_TaoCTDonHang " +madh + "," + lstSP_DTChon[i].soluong + ",'" + lstSP_DTChon[i].madt + "'," + lstSP_DTChon[i].masp;
+                        string sqlCTDH = "exec sp_TaoCTDonHang " +madh + "," + lstSP_DTChon[i].masp + ",'" + lstSP_DTChon[i].madt + "'," + lstSP_DTChon[i].soluong;
+                        
                         SqlCommand commandCTDH = new SqlCommand(sqlCTDH, _dbConnection);
                         lstCommand.Add(commandCTDH);
                     }
@@ -114,7 +115,7 @@ namespace DAO
         {
             DBConnect _dbContext = new DBConnect();
             SqlConnection _dbConnection = _dbContext.creatsqlconnection(username, password);
-            SqlCommand command = new SqlCommand("select * from SELECT * FROM XEMDH()", _dbConnection);
+            SqlCommand command = new SqlCommand(" SELECT * FROM XEMDH()", _dbConnection);
             DataTable dt = new DataTable();
             using (SqlDataReader reader = command.ExecuteReader())
             {

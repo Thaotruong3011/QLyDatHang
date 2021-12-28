@@ -79,6 +79,12 @@
     <Compile Include="MH_QLySanPhamQTV.Designer.cs">
       <DependentUpon>MH_QLySanPhamQTV.cs</DependentUpon>
     </Compile>
+    <Compile Include="MH_QlySP_DT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MH_QlySP_DT.Designer.cs">
+      <DependentUpon>MH_QlySP_DT.cs</DependentUpon>
+    </Compile>
     <Compile Include="MH_QtriND.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MH_QLySanPhamQTV.resx">
       <DependentUpon>MH_QLySanPhamQTV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MH_QlySP_DT.resx">
+      <DependentUpon>MH_QlySP_DT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MH_QtriND.resx">
       <DependentUpon>MH_QtriND.cs</DependentUpon>

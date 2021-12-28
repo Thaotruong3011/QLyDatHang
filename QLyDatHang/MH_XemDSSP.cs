@@ -28,24 +28,23 @@ namespace QLyDatHang
             InitializeComponent();
             kh.email = username;
             kh.pass = password;
-            
         }
         public DTO_KHACHHANG kh = new DTO_KHACHHANG();
 
         private void MH_XemDSSP_Load(object sender, EventArgs e)
-        {
+        {   
            
-            //listSP_DT = BUS.SANPHAM_DOITAC.getdsSPDoiTac(kh.email, kh.pass);
-           DSSP_DT = BUS.SANPHAM_DOITAC.TimKiemSPTheoTen("tdhuy@gmailcom", "123456", " ");
-            //DSSP_DT = BUS.SANPHAM_DOITAC.TimKiemSPTheoTen(kh.email, kh.pass, " ");
+            
+           
+           DSSP_DT = BUS.SANPHAM_DOITAC.TimKiemSPTheoTen(kh.email, kh.pass, " ");
             lst_SanPham.DataSource = DSSP_DT;
 
-            // list_DT=BUS.DOITAC.getdsDoiTac(kh.email, kh.pass);
-            DS_DT = BUS.DOITAC.getdsDoiTac("tdhuy@gmailcom", "123456");
-            //DS_DT = BUS.DOITAC.getdsDoiTac(kh.email, kh.pass);
+           
+            DS_DT = BUS.DOITAC.getdsDoiTac(kh.email, kh.pass);
+            DS_DT = BUS.DOITAC.getdsDoiTac(kh.email, kh.pass);
             lst_DoiTac.DataSource= DS_DT;
             MessageBox.Show(kh.email + "  " + kh.pass);
-           // MessageBox.Show(listSP_DT.Count()+ " ");
+         
         }
 
         private void searchProduct_Click(object sender, EventArgs e)
@@ -72,15 +71,15 @@ namespace QLyDatHang
                     MessageBox.Show(" " + 0);
                     //Tim theo ten san pham
                     DataTable dt = new DataTable();
-                    DSSP_DT = BUS.SANPHAM_DOITAC.TimKiemSPTheoTen("tdhuy@gmailcom", "123456", textSearch);
-                   // DSSP_DT = BUS.SANPHAM_DOITAC.TimKiemSPTheoTen(kh.email,kh.pass, textSearch);
+                    
+                    DSSP_DT = BUS.SANPHAM_DOITAC.TimKiemSPTheoTen(kh.email,kh.pass, textSearch);
                     lst_SanPham.DataSource = DSSP_DT;
                     
                 }
                 else if(searchDT.BackColor == System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(186)))), ((int)(((byte)(0))))))
                 {
-                    DS_DT = BUS.DOITAC.TimKiemDTTheoMa("tdhuy@gmailcom", "123456", textSearch);
-                    //DS_DT = BUS.DOITAC.TimKiemDTTheoMa(kh.email, kh.pass, textSearch);
+                   
+                    DS_DT = BUS.DOITAC.TimKiemDTTheoMa(kh.email, kh.pass, textSearch);
                     lst_DoiTac.DataSource = DS_DT;
                 }
             }
@@ -93,8 +92,8 @@ namespace QLyDatHang
             if (indexChon != -1)
             {
                 string maDT = DS_DT.Rows[indexChon][0].ToString();
-                DSSP_DT = BUS.SANPHAM_DOITAC.TimKiemSPTheoDT("tdhuy@gmailcom", "123456",maDT);
-                //DSSP_DT = BUS.SANPHAM_DOITAC.TimKiemSPTheoDT(kh.email,kh.pass, maDT);
+               
+                DSSP_DT = BUS.SANPHAM_DOITAC.TimKiemSPTheoDT(kh.email,kh.pass, maDT);
                 lst_SanPham.DataSource = DSSP_DT;
             }
 
@@ -145,6 +144,21 @@ namespace QLyDatHang
         {
             MH_ThanhToan mhtt = new MH_ThanhToan(kh.email, kh.pass, listSP_DTChon);
             mhtt.Show();
+        }
+
+        private void DSDH_Click(object sender, EventArgs e)
+        {
+            
+            MH_XemDSDH mhdsdh = new MH_XemDSDH(kh.email,kh.pass);
+            mhdsdh.Show();
+            this.Hide();
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            MH_DangNhap mhDN = new MH_DangNhap();
+            mhDN.Show();
+            this.Hide();
         }
     }
 }

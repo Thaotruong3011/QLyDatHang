@@ -49,7 +49,7 @@ namespace DAO
             }
 
             public int ExecuteNonQuery(String query)
-            {
+            {   
                 int data = 0;
 
                 using (SqlConnection connection = new SqlConnection(connectionSTR))

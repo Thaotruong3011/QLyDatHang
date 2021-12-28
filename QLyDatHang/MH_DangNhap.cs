@@ -39,6 +39,7 @@ namespace QLyDatHang
             {
                 if(t.Rows[0][8].ToString()== "Quản trị viên")
                 {
+                    MessageBox.Show(txbUserName.Text.ToString(), txbPassword.Text.ToString());
                     MH_QLySanPhamQTV MHQLYSP = new MH_QLySanPhamQTV(txbUserName.Text.ToString(), txbPassword.Text.ToString());
                     MHQLYSP.Show();
                     this.Hide();
@@ -48,25 +49,25 @@ namespace QLyDatHang
                 //xemdssp.show();
                 //this.hide();
             }
-            //else if (t.rows[0][0].tostring().indexof("DT") != -1)
-            //{
-            //    //mh_xemdssp xemdssp = new mh_xemdssp();
-            //    ////txbusername.text.tostring()
-            //    //xemdssp.show();
-            //    //this.hide();
-            //}
+            else if (txbUserName.Text.ToString().IndexOf("DT") != -1)
+            {
+                MH_QlySP_DT qlySP = new MH_QlySP_DT(txbUserName.Text.ToString(), txbPassword.Text.ToString());
+                
+                qlySP.Show();
+                this.Hide();
+            }
 
 
 
             //Application.Run(new MH_QLySanPhamQTV());
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            MH_QtriND qlnv= new MH_QtriND();
-            qlnv.Show();
-            this.Hide();
-            //Application.Run(new MH_QtriND());
-        }
+        //private void button2_Click(object sender, EventArgs e)
+        //{
+        //    MH_QtriND qlnv= new MH_QtriND();
+        //    qlnv.Show();
+        //    this.Hide();
+           
+        //}
     }
 }

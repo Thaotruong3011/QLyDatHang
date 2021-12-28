@@ -23,15 +23,15 @@ namespace QLyDatHang
             InitializeComponent();
             qtv.manv = username;
             qtv.pass = password;
-
+           
         }
         public DTO_NHANVIEN qtv = new DTO_NHANVIEN();
 
         private void MH_QLySanPhamQTV_Load(object sender, EventArgs e)
         {
-           DS_SP=BUS.SANPHAM.getdsSP("NV002", "123456");
+           DS_SP=BUS.SANPHAM.getdsSP(qtv.manv,qtv.pass);
             LstSP.DataSource = DS_SP;
-            DSSP_DT = BUS.SANPHAM_DOITAC.getdsSPDoiTac("NV002", "123456");
+            DSSP_DT = BUS.SANPHAM_DOITAC.getdsSPDoiTac(qtv.manv, qtv.pass);
             lstSPDT.DataSource = DSSP_DT;
         }
 
@@ -52,9 +52,9 @@ namespace QLyDatHang
         {
             string tenSua = tensp.Text;
             int maSP = Int32.Parse(masp.Text);
-            BUS.SANPHAM.updateTenSP("NV002", "123456", maSP, tenSua);
+            BUS.SANPHAM.updateTenSP(qtv.manv, qtv.pass, maSP, tenSua);
             MessageBox.Show("Đã thay đổi thông tin sản phẩm");
-            DS_SP = BUS.SANPHAM.getdsSP("NV002", "123456");
+            DS_SP = BUS.SANPHAM.getdsSP(qtv.manv, qtv.pass);
             LstSP.DataSource = DS_SP;
         }
 
@@ -63,6 +63,13 @@ namespace QLyDatHang
             MH_QtriND QTND = new MH_QtriND(qtv.manv,qtv.pass);
             QTND.Show();
             this.Close();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            MH_DangNhap mhDN = new MH_DangNhap();
+            mhDN.Show();
+            this.Hide();
         }
     }
 }

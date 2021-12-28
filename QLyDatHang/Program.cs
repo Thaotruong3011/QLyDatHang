@@ -16,7 +16,7 @@ namespace QLyDatHang
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MH_XemDSSP());
+            Application.Run(new MH_DangNhap());
         }
     }
 }

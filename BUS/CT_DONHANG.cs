@@ -9,7 +9,11 @@ using System.Data;
 
 namespace BUS
 {
-    class CT_DONHANG
+    public class CT_DONHANG
     {
+        public static DataTable XemDSCTDH_KH(string username, string password)
+        {
+            return DB_CT_DONHANG.XemDSCTDH_KH(username, password);
+        }
     }
 }
